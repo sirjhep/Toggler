@@ -1,0 +1,13 @@
+/* Sample Toggle States */
+
+.grow{
+  font-size: 100px;
+}
+
+.redfont{
+  color: red;
+}
+
+.blueBg{
+  background-color: blue;
+}
