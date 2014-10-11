@@ -1,26 +1,93 @@
 <html>
 <head>
-  <title>Toggler</title>
+  <title>Toggler Demonstration</title>
   <script src="http://code.jquery.com/jquery-1.11.1.min.js" type="text/javascript"></script>
   <script src="http://code.jquery.com/ui/1.11.1/jquery-ui.min.js" type="text/javascript"></script>
+  <script scr="toggler.js"></script>
   <script src="script.js" type="text/javascript"></script>
   <link href="style.css" rel="stylesheet" />
 </head>
 <body>
-<p>Sorry for the unattractive layout, I'm just after the functionality. Add was to lazy to complete all toggle options.</p>
-<p>This requires jQuery and jQueryUI to work</p>
-<button class="togNextAll">Make every elements after me disapper</button>
-<hr />
-<a href="div" class="tog-grow">Let It Grow!</a> |
-<a href="div" class="tog-red">Be the Red!</a> |
-<span target="div" class="tog">Blue BG?</span>
-<button which=".last" class="tog">Open/Hide the last Div</button>
-<div>Toggler is a jQueryUI widget.</div>
-<div>Toggler is a jQueryUI widget but a custom widget.</div>
-<div class="last">It can read other types of attrib and you can make your own</div>
+<article class="markdown-body entry-content" itemprop="mainContentOfPage"><h1>
+<a name="user-content-toggler" class="anchor" href="#toggler" aria-hidden="true"><span class="octicon octicon-link"></span></a>Toggler</h1>
 
-<button class="togNext">Make the next element to this button bigger</button><span class="togBoth">Make the button besides me disapper</span><button class="togPrev">Make the prev element red</button>
-<hr />
-<button class="togPrevAll">Meke every elements after me disapper</button>
+<p>*Requires jQuery and jQueryUI.
+A custom widget for jQueryUI.</p>
+
+<p>This widget is mainly use for toggling a state of target elements using a trigger.
+Though it is also possible to toggle something else (doesn't have to be an element).</p>
+
+<p>"Toggle" means to change between 2 states, like on and off switch.</p>
+
+<hr>
+
+<h4>
+<a name="user-content-sample-usage" class="anchor" href="#sample-usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sample usage:</h4>
+
+<p>Html side:</p>
+
+<pre><code>&lt;button href=".hide" class="toggler"&gt;Click Me to toggle the message below.&lt;/buton&gt;
+&lt;p class="hide"&gt;
+  There are two elements here, but if you click the button above me, you will only see one.
+&lt;/p&gt;
+</code></pre>
+
+<p>Javascript Side:</p>
+
+<pre><code>&lt;script&gt;
+  $(".toggler").toggler()
+&lt;/script&gt;
+</code></pre>
+
+<p>The above code will initiate all elements with class "toggle".
+".togger" is the trigger of the widget.
+Any jQuery selector or jQuery object can be use as trigger.
+If the selector is collection, every element of that collection will be a toggler widget.
+Since the above code doesn't posses any parameters, then the default toggle will take place which is, the target is the object pertained by the value of "href" attribute of the trigger. The value of "href" should be a valid jQuery selector.</p>
+
+<p>Here's a more complicated example.</p>
+
+<p>Html side:</p>
+
+<pre><code>&lt;style&gt;
+.grow{
+  font-size: 100px;
+}
+&lt;/style&gt;
+&lt;button target="div" class="grower"&gt;Let It Grow!&lt;/button&gt;
+&lt;div&gt;Click Me to hide the button above.&lt;/div&gt;
+</code></pre>
+
+<p>Javascript Side:</p>
+
+<pre><code>&lt;script&gt;
+$(document).ready(function(){
+  $(".grower").toggler({
+    toggle: "grow",
+    attr: "target",
+    on: function(trig, target){
+      trig.html("Let it Shrink!");
+    },
+    off: function(trig, target){
+      trig.html("Let it Grow!");
+    }
+  });
+
+  $("div").toggler({
+    prev: true,
+    on: function(trig, target){
+      trig.html("Click Me to show the button above");
+    },
+    off: function(trig, target){
+      trig.html("Click Me to hide the button above");
+    }
+  })
+
+});
+&lt;/script&gt;
+</code></pre>
+
+<p>As you can see there's quite a number of parameters that can be set, to know more about the available parameters and more example. Please visit the <a href="https://github.com/sirjhep/Toggler/wiki">wiki</a>.</p>
+</article>
 </body>
 </html>
