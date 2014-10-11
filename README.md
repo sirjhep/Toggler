@@ -21,9 +21,9 @@ Html side:
 
 Javascript Side:
 ```
-<script>
+$(document).ready(function(){
   $(".toggler").toggler()
-</script>
+});
 ```
 
 The above code will initiate all elements with class "toggle".
@@ -47,7 +47,6 @@ Html side:
 
 Javascript Side:
 ```
-<script>
 $(document).ready(function(){
   $(".grower").toggler({
     toggle: "grow",
@@ -70,8 +69,7 @@ $(document).ready(function(){
     }
   })
 
-});
-</script>
+})
 ```
 
 As you can see there's quite a number of parameters that can be set, to know more about the available parameters and more example. Please visit the [wiki](https://github.com/sirjhep/Toggler/wiki).
