@@ -11,20 +11,8 @@ Though it is also possible to toggle something else (doesn't have to be an eleme
 -------------
 #### Sample usage:
 
-Html side:
-```
-<button href=".hide" class="toggler">Click Me to toggle the message below.</buton>
-<p class="hide">
-  There are two elements here, but if you click the button above me, you will only see one.
-</p>
-```
-
-Javascript Side:
-```
-$(document).ready(function(){
-  $(".toggler").toggler()
-});
-```
+<p data-height="169" data-theme-id="0" data-slug-hash="GqBdH" data-default-tab="result" data-user="sirjhep" class='codepen'>See the Pen <a href='http://codepen.io/sirjhep/pen/GqBdH/'>GqBdH</a> by Jephthah Orobia (<a href='http://codepen.io/sirjhep'>@sirjhep</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<script async src="//codepen.io/assets/embed/ei.js"></script>
 
 The above code will initiate all elements with class "toggle".
 ".togger" is the trigger of the widget.
