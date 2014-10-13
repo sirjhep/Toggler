@@ -1,13 +1,45 @@
 /* Sample Toggle States */
 
-.grow{
-  font-size: 100px;
+body{
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  font-size: 0.9em;
+  font-family: Consolas;
+  background-color: black;
+  color: #222222;
 }
 
-.redfont{
-  color: red;
+h1, h2, h3, h4, h5, h6{
+  margin: 3px 0px 2px 0px;
+  color: black;
+  text-shadow: 1px 1px 3px white;
+  display: inline;
 }
 
-.blueBg{
-  background-color: blue;
+hr{
+  border: 1px solid black;
+}
+
+a, a:visited, a:active{
+  color: yellow;
+  text-decoration: none;
+  text-shadow: 1px 1px 3px black;
+}
+
+a:hover{
+  color: white;
+}
+
+div:first-child{
+  width: 800px;
+  min-height: 100%;
+  background-color: skyblue;
+  padding: 20px 20px;
+  margin: auto;
+}
+
+@media screen and (max-width: 840px){
+  div:first-child{
+    width: auto;
+  }
 }
